@@ -25,6 +25,17 @@ Install via Composer:
 composer require avoutic/web-framework-stripe
 ```
 
+Make sure the definitions file is included in your project by adding it to `definition_files` in your `config.php` file:
+
+```php
+return [
+    'definition_files' => [
+        '../vendor/avoutic/web-framework/definitions/definitions.php',
+        '../vendor/avoutic/web-framework-stripe/definitions/definitions.php',
+        'app_definitions.php',
+    ],
+];
+```
 ## Configuration
 
 If you are using the definition from _definitions/defitinions.php_. You can just add the following _stripe.php_ to your auth config directory (_config/auth_):
@@ -33,12 +44,8 @@ If you are using the definition from _definitions/defitinions.php_. You can just
 <?php
 
 return [
-    'api_key' => 'your_stripe_secret_key',
-    'publishable_api_key' => 'your_publishable_api_key',
-    'endpoint_secret' => 'your_webhook_endpoint_secret'
+    'api_key' => env('STRIPE_SECRET_KEY'),'your_stripe_secret_key',
+    'publishable_api_key' => env('STRIPE_PUBLISHABLE_KEY'),
+    'endpoint_secret' => env('STRIPE_WEBHOOK_SECRET')
 ]
 ```
-
-## License
-
-This module is open-sourced software licensed under the [MIT license](LICENSE). 
