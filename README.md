@@ -14,7 +14,7 @@ This module provides Stripe integration for WebFramework, offering a clean inter
 ## Requirements
 
 - PHP 8.2 or higher
-- WebFramework 8.x
+- WebFramework 8 to 12
 - Stripe PHP SDK 7.128 or higher
 
 ## Installation
